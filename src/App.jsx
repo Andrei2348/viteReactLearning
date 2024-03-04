@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import './App.css'
+import { ways } from './data'
 
-function WayToTeach() {
+function WayToTeach(props) {
   return (
     <li>
       <p>
-        <strong>Заголовок</strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia tempore veritatis illum corporis obcaecati architecto. Itaque dolorum vitae sunt maxime aliquid voluptates officia autem dolor, ex, eius commodi neque tempore.
+        <strong>{props.title}</strong>
+        {props.description}
       </p>
     </li>
   )
@@ -17,16 +19,19 @@ function WayToTeach() {
 function App() {
   return (
     <div>
-    <Header />
+    {/* <Header /> */}
     <main>
       <h1>hello react!!!</h1>
     </main>
     <section>
       <h3>Наш подход к обучению</h3>
       <ul>
-        <WayToTeach />
-        <WayToTeach />
-        <WayToTeach />
+        <WayToTeach 
+        title={ways[0].title}
+        description={ways[0].description} />
+        <WayToTeach { ... ways[1]} />
+        <WayToTeach { ... ways[2]} />
+        
       </ul>
     </section>
     </div>
