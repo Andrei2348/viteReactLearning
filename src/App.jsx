@@ -2,21 +2,17 @@ import { useState } from 'react'
 import Header from './components/Header'
 import './App.css'
 import { ways } from './data'
-
-function WayToTeach(props) {
-  return (
-    <li>
-      <p>
-        <strong>{props.title}</strong>
-        {props.description}
-      </p>
-    </li>
-  )
-}
+import WayToTeach from './components/WayToTeach'
+import Button from './components/button/Button'
 
 
 
 function App() {
+
+  function handleClick(type){
+    console.log('button clicked', type)
+  }
+
   return (
     <div>
     {/* <Header /> */}
@@ -33,6 +29,13 @@ function App() {
         <WayToTeach { ... ways[2]} />
         
       </ul>
+    </section>
+
+    <section>
+      <h3>Чем мы отличаемся от других</h3>
+      <Button onClick={() => handleClick('way')}>button 1</Button>
+      <Button onClick={() => handleClick('easy')}>button 2</Button>
+      <Button onClick={() => handleClick('program')}>button 3</Button>
     </section>
     </div>
   )
