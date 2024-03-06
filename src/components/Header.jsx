@@ -1,11 +1,15 @@
 const now = new Date()
+import { useState } from 'react'
 
 export default function Header(){
-return (
-    <header>
-        <h3>Result university</h3>
-        <span>Тут будет весело</span>
-        <p>Время сейчас {now.toLocaleTimeString()}</p>
-    </header>
-    )
-}
+    const [now, setNow] = useState(new Date())
+    setInterval(() => setNow(new Date()), 1000)
+
+    return (
+        <header>
+            <h3>Result university</h3>
+            <span>Тут будет весело</span>
+            <p>Время сейчас {now.toLocaleTimeString()}</p>
+        </header>
+        )
+    }
