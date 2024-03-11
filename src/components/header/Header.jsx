@@ -1,5 +1,6 @@
 const now = new Date()
 import { useState } from 'react'
+import classes from './header.module.css'
 
 export default function Header(){
     const [now, setNow] = useState(new Date())

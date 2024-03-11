@@ -17,3 +17,7 @@
 .button.active{
     background: #080a0f;
 }
+
+.button:disabled{
+    cursor: not-allowed;
+}
