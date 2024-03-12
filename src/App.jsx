@@ -6,6 +6,7 @@ import { Fragment } from 'react'
 import IntroSection from './components/IntroSection'
 import TabsSection from './components/TabsSection'
 import FeedbackSection from './components/FeedbackSection'
+import EffectSection from './components/EffectSection'
 import { useState } from 'react'
 
 function getNumber() {
@@ -15,7 +16,7 @@ function getNumber() {
 
 
 function App() {
-    const [tab, setTab] = useState('feedback')
+    const [tab, setTab] = useState('effect')
 
     return (
         <Fragment>
@@ -32,6 +33,7 @@ function App() {
                     </>
                 )}
                 {tab == 'feedback' && <FeedbackSection />}
+                {tab == 'effect' && <EffectSection />}
             </main>
         </Fragment>
     )

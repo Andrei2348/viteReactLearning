@@ -1,5 +1,28 @@
 import Button from './button/Button'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+
+function StateVsRef(){
+    const input = useRef()
+    const [show, setShow] = useState(false)
+
+    function handleKeyDown(event){
+        if(event.key == 'Enter'){
+            setShow(true)
+        }
+    }
+
+    return (
+        <>
+            <h3>Input Value: {show && input.current.value}</h3>
+            <input
+                ref={input}
+                type='text'
+                onKeyDown={handleKeyDown} />
+        </>
+    )
+}
+
+
 
 export default function FeedbackSection(){
     const [form, setForm] = useState({
@@ -61,6 +84,7 @@ export default function FeedbackSection(){
                 <Button disabled={form.hasError} isActive={!form.hasError}>
                     Отправить
                 </Button>
+                <StateVsRef />
             </form>
         </section>
     )
